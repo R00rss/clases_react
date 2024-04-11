@@ -10,5 +10,6 @@ ReactDOM.createRoot(raiz_app_react)
   .render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
+
   )
