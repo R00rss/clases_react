@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import ButtonAction from './components/ButtonAction'
 import FormComponent from './components/FormComponent'
+import UserComponent from './components/UsersComponent'
 
 //componente PADRE
 function App() {
@@ -62,7 +63,8 @@ function App() {
         */
       }
 
-      <FormComponent />
+      {/* <FormComponent /> */}
+      <UserComponent />
     </>
   )
 }

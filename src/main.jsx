@@ -11,5 +11,4 @@ ReactDOM.createRoot(raiz_app_react)
     <React.StrictMode>
       <App />
     </React.StrictMode>
-
   )

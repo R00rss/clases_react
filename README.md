@@ -12,3 +12,8 @@
 - Manejo de eventos en React
 - Creacion y manejo de formulariops
 - Validacion de formularios
+- 
+## temas clase 4 12/04/2024
+- Fetching de datos de un API
+- uso de useState y useEffect
+- custom hook para hacer fetching de datos
