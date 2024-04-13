@@ -1,52 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useFetch } from "../hooks/useFetch"
 
 function UserComponent() {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [controller, setController] = useState(null);
-
-    useEffect(
-        () => {
-            const abortController = new AbortController();
-
-            setController(abortController)
-
-            fetch("https://jsonplaceholder.typicode.com/users",
-                { signal: abortController.signal }
-            )
-                .then(
-                    response => {
-                        console.log(response)
-                        return response.json()
-                    }
-                ).then(
-                    data => {
-                        console.log(data)
-                        setData(data)
-                    }
-                ).catch(
-                    error => {
-                        if (error.name === 'AbortError') {
-                            console.log({ error })
-                            return
-                        }// este error no es bloqueando para el usuario en nuestra lógica
-                        setError(error)
-                        console.error(error)
-                    }
-                ).finally(() => {
-                    setLoading(false)
-                })
-            return () => abortController.abort()
-        }, []
-    )
-
-    function handlerAbortRequest() {
-        console.log("handlerAbortRequest")
-        if (!controller) return;
-        controller.abort();
-    }
-
+    const { data, error, handlerAbortRequest, loading } = useFetch("https://jsonplaceholder.typicode.com/users")
 
     console.log("render")
 
